@@ -1,0 +1,30 @@
+var str="http://localhost/ninja0.9/php/mysql.php/aaaa?admin=126&key=123"
+
+
+
+var i=str.lastIndexOf("?")
+
+
+var a=str.substring(0,i).lastIndexOf("/")
+
+document.write(str.substring(0,i).substring(a) + "<br />")
+
+
+
+
+select @rownum:=@rownum+1 as rownum,
+id
+from student,(select @rownum:=0) t where score>50 order by score desc
+
+
+select @rownum:=@rownum+1 as rownum,
+id
+from student,(select @rownum:=0) t order by score desc
+
+
+select @rownum:=@rownum+1 as rownum,
+id
+from student,(select @rownum:=0) t where id =(select 
+id
+from student where score>50 order by score desc
+);
